@@ -108,9 +108,13 @@
 
       // 👉 CHALLENGE 4
       // 🧠 Build a CountDown class that can count down starting at any number we pass to the constructor.
+
       // 🧠 CountDowns have a `count` method that returns a string in the format "10!".
+
       // 🧠 One exception is that upon reaching zero, instead of returning "0!", `count` returns "Liftoff!"
+
       // 🧠 After liftoff, `count` returns null instead of a string.
+
       // 🧠 It's up to you to decide what property (or properties) are needed.
       // Example of use:
       //   let minusThree = new CountDown(3) // we could pass any number
@@ -120,7 +124,24 @@
       //   minusThree.count() // returns "Liftoff!"
       //   minusThree.count() // returns null
       //   minusThree.count() // returns null
-      class CountDown {}
+      class CountDown {
+        constructor(start) {
+          this.start = start;
+        }
+
+        count() {
+          if (this.start > 0) {
+            const currentCount = this.start;
+            this.start--;
+            return `${currentCount}!`;
+          } else if (this.start === 0) {
+            this.start--;
+            return "Liftoff!";
+          } else {
+            return null;
+          }
+        }
+      }
 
       // 🧪 TESTS, do not work below this line
       // 🧪 TESTS, do not work below this line
