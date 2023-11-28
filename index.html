@@ -70,7 +70,7 @@
         }
         down(meters) {
           this.altitude -= meters;
-          if (this.altitude > 0) {
+          if (this.altitude >= 0) {
             return this.altitude;
           } else this.altitude = 0;
           return "CRASH!";
