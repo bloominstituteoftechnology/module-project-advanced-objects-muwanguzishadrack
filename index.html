@@ -45,14 +45,37 @@
 
       // 👉 CHALLENGE 2
       // 🧠 Build an AirPlane class. This class allows to instantiate airplanes.
+
       // 🧠 When instantiating a new plane using this class, we provide a string with the model of the plane.
+
       // 🧠 A new plane has a `model` prop initialised to the desired model, and also an `altitude` prop initialised to 0.
+
       // 🧠 Planes have an `up` method, which takes a number of meters as its argument.
+
       // 🧠 Calling `up` changes the `altitude` prop appropriately and returns the updated `altitude`.
+
       // 🧠 Planes have a `down` method, which takes a number of meters as its argument.
+
       // 🧠 Calling `down` changes the `altitude` prop appropriately and returns the updated `altitude`.
+
       // 🧠 If calling `down` would cause the plane to go below altitude zero, `altitude` is set to 0 and the string "CRASH!" is returned.
-      class AirPlane {}
+      class AirPlane {
+        constructor(model) {
+          this.model = model;
+          this.altitude = 0;
+        }
+        up(meters) {
+          this.altitude += meters;
+          return this.altitude;
+        }
+        down(meters) {
+          this.altitude -= meters;
+          if (this.altitude > 0) {
+            return this.altitude;
+          } else this.altitude = 0;
+          return "CRASH!";
+        }
+      }
 
       // 👉 CHALLENGE 3
       // 🧠 Build a Bulb class.
